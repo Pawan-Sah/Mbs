@@ -37,10 +37,9 @@ public class City {
                 '}';
     }
 
-    public City(int cityId, String cityName, List<Theater> theaters) {
+    public City(int cityId, String cityName) {
         this.cityId = cityId;
         this.cityName = cityName;
-        this.theaters = theaters;
     }
 
     public int getCityId() {

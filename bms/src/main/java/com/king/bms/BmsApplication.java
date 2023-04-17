@@ -1,5 +1,6 @@
 package com.king.bms;
 
+import com.king.bms.dao.CityDao;
 import com.king.bms.dao.MovieDao;
 import com.king.bms.dao.TheaterDao;
 import com.king.bms.entity.City;
@@ -11,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @SpringBootApplication
 public class BmsApplication {
@@ -34,22 +36,42 @@ public class BmsApplication {
 		movieService.acceptMovieDetails(movie3);
 		movieService.acceptMovieDetails(movie4);
 
+		*/
 
 
-		Theater theater=new Theater();
-		theater.setTheatername("alpa");
-		//theater.setCity(new City("Noida"));
+		City city1=new City();
+		city1.setCityName("Noida");
+		City city2=new City();
+		city2.setCityName("Delhi");
+
+		CityDao cityDao=ctx.getBean(CityDao.class);
+		cityDao.save(city1);
+		cityDao.save(city2);
+
 		TheaterDao theaterDao=ctx.getBean(TheaterDao.class);
-		theaterDao.save(theater);
+
+		Theater theater1=new Theater();
+		theater1.setTheatername("alpa");
+		theater1.setCity(city1);
+		theaterDao.save(theater1);
+
 		Theater theater2=new Theater();
 		theater2.setTheatername("beta");
+		theater2.setCity(city1);
+		theaterDao.save(theater2);
+
 		Theater theater3=new Theater();
 		theater3.setTheatername("gama");
+		theater3.setCity(city1);
+		theaterDao.save(theater3);
+
 		Theater theater4=new Theater();
 		theater4.setTheatername("delta");
-		theaterDao.save(theater2);
-		theaterDao.save(theater3);
-		theaterDao.save(theater4);*/
+		theater4.setCity(city2);
+		theaterDao.save(theater4);
+
+		System.out.println(cityDao.findAllTheaterByCityId(city1.getCityId()));
+
 
 
 
