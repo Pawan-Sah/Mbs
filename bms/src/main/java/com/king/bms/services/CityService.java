@@ -37,5 +37,5 @@ public interface CityService {
      * to find all the theater in city
      */
 
-    public List<Theater> getAllTheaterInCity(int cityId);
+    public List<Theater> getAllTheaterInCity(City city);
 }

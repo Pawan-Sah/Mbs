@@ -1,6 +1,7 @@
 package com.king.bms.services.impl;
 
 import com.king.bms.dao.CityDao;
+import com.king.bms.dao.TheaterDao;
 import com.king.bms.entity.City;
 import com.king.bms.entity.Theater;
 import com.king.bms.exceptions.CityDetailsNotFoundException;
@@ -12,6 +13,8 @@ import java.util.List;
 public class CityServiceImpl implements CityService {
     @Autowired
     private CityDao cityDao;
+    @Autowired
+    private TheaterDao theaterDao;
     @Override
     public City acceptCityDetails(City city) {
         return cityDao.save(city);
@@ -45,7 +48,7 @@ public class CityServiceImpl implements CityService {
     }
 
     @Override
-    public List<Theater> getAllTheaterInCity(int cityId) {
-        return cityDao.findAllTheaterByCityId(cityId);
+    public List<Theater> getAllTheaterInCity(City city) {
+        return theaterDao.findAllByCity(city);//cityDao.findAllTheaterByCityId(cityId);
     }
 }

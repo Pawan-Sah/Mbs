@@ -7,6 +7,8 @@ import com.king.bms.services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MovieServiceImpl implements MovieService {
 
@@ -22,5 +24,31 @@ public class MovieServiceImpl implements MovieService {
     public Movie getMovieDeatils(int movieId) throws MovieDetailsNotFoundException {
         Movie saveMovie=movieDao.findById(movieId).orElseThrow(()->new MovieDetailsNotFoundException("Movie details not found for the movie id : "+ movieId));
         return saveMovie;
+    }
+
+    @Override
+    public Movie getMovieDeatailsByMovieName(String movieName) throws MovieDetailsNotFoundException {
+        Movie findMovie=movieDao.findMovieByMovieName(movieName);
+        if(findMovie==null)
+            throw new MovieDetailsNotFoundException("we can not find information to input movie : "+movieName);
+        else {
+            return findMovie;
+        }
+    }
+
+    @Override
+    public Boolean deleteMovieDetails(int movieId) {
+        movieDao.deleteById(movieId);
+        return true;
+    }
+
+    @Override
+    public List<Movie> getAllMovieDeails() {
+        return movieDao.findAll();
+    }
+
+    @Override
+    public List<Movie> getMovieByDuration(float duration) {
+        return movieDao.findByDurationGreaterThanEqual(duration);
     }
 }

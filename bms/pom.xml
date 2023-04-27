@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.king</groupId>
-	<artifactId>bms</artifactId>
+	<artifactId>Mbs</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bms</name>
 	<description>Demo project for Spring Boot</description>

@@ -86,8 +86,8 @@ public class Theater {
                 "theaterId=" + theaterId +
                 ", theatername='" + theatername + '\'' +
                 ", ticketPrice=" + ticketPrice +
-                ", city=" + city +
-                ", movies=" + movies +
+               // ", city=" + city +
+               // ", movies=" + movies +
                 '}';
     }
 }

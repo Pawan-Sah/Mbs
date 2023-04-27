@@ -27,7 +27,7 @@ public class Movie {
     private String movieTrailerUrl;
 
     @Column(length = 500,name = "cover_url")
-    private String CoverPhotoUrl;
+    private String coverPhotoUrl;
 
     @Column(nullable = false)
     private float duration;
@@ -40,7 +40,7 @@ public class Movie {
         this.moviedescription = moviedescription;
         this.releaseDate = releaseDate;
         this.movieTrailerUrl = movieTrailerUrl;
-        CoverPhotoUrl = coverPhotoUrl;
+        this.coverPhotoUrl = coverPhotoUrl;
         this.duration = duration;
     }
 
@@ -56,7 +56,7 @@ public class Movie {
         this.moviedescription = moviedescription;
         this.releaseDate = releaseDate;
         this.movieTrailerUrl = movieTrailerUrl;
-        CoverPhotoUrl = coverPhotoUrl;
+        this.coverPhotoUrl = coverPhotoUrl;
         this.duration = duration;
         Theaters = theaters;
     }
@@ -102,11 +102,11 @@ public class Movie {
     }
 
     public String getCoverPhotoUrl() {
-        return CoverPhotoUrl;
+        return coverPhotoUrl;
     }
 
     public void setCoverPhotoUrl(String coverPhotoUrl) {
-        CoverPhotoUrl = coverPhotoUrl;
+        this.coverPhotoUrl = coverPhotoUrl;
     }
 
     public float getDuration() {
@@ -137,9 +137,9 @@ public class Movie {
                 ", moviedescription='" + moviedescription + '\'' +
                 ", releaseDate=" + releaseDate +
                 ", movieTrailerUrl='" + movieTrailerUrl + '\'' +
-                ", CoverPhotoUrl='" + CoverPhotoUrl + '\'' +
+                ", CoverPhotoUrl='" + coverPhotoUrl + '\'' +
                 ", duration=" + duration +
-                ", Theaters=" + Theaters +
+                //", Theaters=" + Theaters +
                 '}';
     }
 }

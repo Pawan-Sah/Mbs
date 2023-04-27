@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 //localhost:8085/bms/v1/demos/
-@RequestMapping("/bms/v1/demos")  // this annotation us used for routing
+//@RequestMapping("/bms/v1/demos")  // this annotation us used for routing
+@RequestMapping("/demos")  // this annotation us used for routing
 public class DemoController {
     /**
      *when someone hit on 127.0.0.1:8085/bms/v1/demos
@@ -22,7 +23,7 @@ public class DemoController {
      */
     @GetMapping
     public ResponseEntity getDemo(){
-        return new ResponseEntity("Hello World", HttpStatus.OK);
+        return new ResponseEntity("Hello World !!!!", HttpStatus.OK);
     }
 
     /**

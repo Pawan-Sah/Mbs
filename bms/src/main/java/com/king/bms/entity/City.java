@@ -3,6 +3,7 @@ package com.king.bms.entity;
 import jakarta.persistence.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 
@@ -33,7 +34,7 @@ public class City {
         return "City{" +
                 "cityId=" + cityId +
                 ", cityName='" + cityName + '\'' +
-                ", theaters=" + theaters +
+                //", theaters=" + theaters.stream().map(Theater::getTheatername).collect(Collectors.toList()) +
                 '}';
     }
 
