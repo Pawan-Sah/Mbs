@@ -1,1 +1,2 @@
-
+This is a movie booking application where user has many functionaly like 
+to add a movie,delete a movie,get all movie ,to find theater based on city or to perform crud operation on each entity in this project.
