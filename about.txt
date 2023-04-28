@@ -1,2 +1,8 @@
 This is a movie booking application where user has many functionaly like 
-to add a movie,delete a movie,get all movie ,to find theater based on city or to perform crud operation on each entity in this project.
+to add a movie,delete a movie,get all movie ,to find theater based on city or to perform crud operation on each entity in this project and more functionality.
+
+In this project i have used java springBoot to create backend of movie booking application.
+Database used is H2
+Hibernate to managage relational database
+RestFul API to perform task
+
